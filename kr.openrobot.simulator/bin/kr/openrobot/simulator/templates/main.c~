@@ -1,0 +1,32 @@
+#include <avr/io.h>
+#include <avr/interrupt.h>
+
+#define PWM	DDRB // #15 Pin. PB4
+
+/*
+ *  minimum: -90, 0.7msec
+ *  maximum: 90, 2.3msec
+ *  mid: 0, 1.5msec, (max - min) / 2
+ */
+
+#define ANGLE_MIN	700 + (8 * ${devDownAngle})
+#define ANGLE_MID	1500
+#define ANGLE_MAX	1500 + (8 * ${devUpAngle})
+
+${init}
+${run}
+
+int main()
+{
+	cli();
+	${devName}_init();
+	${devName}_init();
+	sei();
+
+	while(1) {
+
+		motor_run();
+
+	}
+	return 0;
+}

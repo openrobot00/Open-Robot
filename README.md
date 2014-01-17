@@ -1,4 +1,4 @@
-Open-Robot
-==========
+openrobot
+=========
 
-Open source Robot Simulator (based on ODE, Eclipse PDE)
+Opensource Robot Simulator (Eclipse plug-in)

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="kr.openrobot.simulator.NewProjectWizard"
+            name="Robot Simulator">
+      </category>
+      <wizard
+            canFinishEarly="false"
+            category="kr.openrobot.simulator.NewProjectWizard"
+            class="kr.openrobot.simulator.ui.wizards.NewProjectCreateWizard"
+            finalPerspective="kr.openrobot.simulator.perspective"
+            hasPages="true"
+            icon="icons/sample.gif"
+            id="kr.openrobot.simulator.ui.wizards.NewProjectCreateWizard"
+            name="Robot Simulator Project"
+            project="true">
+      </wizard>
+      <wizard
+            canFinishEarly="false"
+            category="kr.openrobot.simulator.NewProjectWizard"
+            class="kr.openrobot.simulator.ui.wizards.NewObjectSelection"
+            finalPerspective="kr.openrobot.simulator.perspective"
+            icon="icons/sample.gif"
+            id="kr.openrobot.simulator.ui.wizards.NewObjectSelection"
+            name="Robot Simulator Object Selection"
+            project="false">
+      </wizard>
+      <wizard
+            class="kr.openrobot.simulator.ui.wizards.NewPropertiesWizard"
+            icon="icons/sample.gif"
+            id="kr.openrobot.simulator.ui.wizards.NewPropertiesWizard"
+            name="Robot Simulator Properties Wizard">
+      </wizard>
+      <primaryWizard
+            id="kr.openrobot.simulator.ui.wizards.NewProjectCreateWizard">
+      </primaryWizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="kr.openrobot.simulator.Perspective"
+            icon="icons/sample.gif"
+            id="kr.openrobot.simulator.perspective"
+            name="Robot Simulator Perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="kr.openrobot.simulator.actionSet"
+            label="Robot Simulator Action Set"
+            visible="true">
+         <action
+               class="kr.openrobot.simulator.ui.actions.SimulatorRun"
+               id="kr.openrobot.simulator.ui.actions.SimulatorRun"
+               label="&amp;Run Simulator"
+               toolbarPath="Robot Simulator Action Set"
+               tooltip="Run Simulator">
+         </action>
+         <action
+               class="kr.openrobot.simulator.ui.actions.CodeGenRun"
+               id="kr.openrobot.simulator.ui.actions.CodeGen"
+               label="&amp;Generate Code"
+               toolbarPath="Robot Simulator Action Set"
+               tooltip="Generate Code">
+         </action>
+         <action
+               class="kr.openrobot.simulator.ui.actions.BuildRun"
+               id="kr.openrobot.simulator.ui.buildAction"
+               label="&amp;Build"
+               toolbarPath="Robot Simulator Action Set"
+               tooltip="Build">
+         </action>
+         <action
+               class="kr.openrobot.simulator.ui.actions.DownloadAction"
+               id="kr.openrobot.simulator.ui.DownAction"
+               label="&amp;Download"
+               toolbarPath="Robot Simulator Action Set"
+               tooltip="Download">
+         </action>
+      </actionSet>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="kr.openrobot.simulator.ui.views.DevicePropertyView"
+            icon="icons/sample.gif"
+            id="kr.openrobot.simulator.ui.views.DevicePropertyView"
+            name="name"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="kr.openrobot.simulator.editors.PropertiesEditor"
+            contributorClass="kr.openrobot.simulator.editors.MultiPageEditorContributor"
+            default="false"
+            extensions="xml"
+            icon="icons/sample.gif"
+            id="kr.openrobot.simulator.editors.MultiPageEditor"
+            name="Sample Multi-page Editor">
+      </editor>
+   </extension>
+
+
+</plugin>
